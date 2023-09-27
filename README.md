@@ -1,23 +1,23 @@
 # springtoy
 
-아래에 관련된 백엔드 코드를 작성하였습니다
-1.장바구니 목록보기
-2.장바구니에 담기
-3.장바구니에서 선택된 목록 삭제
-4.주문하기
-5.주문목록보기
+아래에 관련된 백엔드 코드를 작성하였습니다 <br /> 
+1.장바구니 목록보기 <br /> 
+2.장바구니에 담기 <br /> 
+3.장바구니에서 선택된 목록 삭제 <br /> 
+4.주문하기 <br /> 
+5.주문목록보기 <br /> 
 
 
-실행방법
-1. sql 데이터베이스에 테이블을 추가합니다.
-     --시퀀스 생성
-     Create sequence id_seq;
-     --테이블 생성
-      Create Table CART(id number() primary key,
-                        productId number() foreign key,
-                        name varchar2(),
-                        price varchar2(),
-                        quantity varchar2()) 
+실행방법 <br /> 
+1. sql 데이터베이스에 테이블을 추가합니다. <br /> 
+     --시퀀스 생성 <br /> 
+     Create sequence id_seq; <br /> 
+     --테이블 생성 <br /> 
+      Create Table CART(id number() primary key, <br /> 
+                        productId number() foreign key, <br /> 
+                        name varchar2(), <br /> 
+                        price varchar2(), <br /> 
+                        quantity varchar2())  <br /> 
    
 3. 아파치 톰캣으로 연결하였습니다.   
 4. run on server로 메인 페이지를 엽니다. (to be added)
