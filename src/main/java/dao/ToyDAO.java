@@ -18,6 +18,7 @@ public class ToyDAO {
 	public List<ToyVO> selectList() {
 		List<ToyVO> list = sqlSession.selectList("t.toy_cartlist");
 		return list;
+	}
 	
 	//장바구니 상품 담기
 	public int addCart(ToyVO vo) {
@@ -33,17 +34,17 @@ public class ToyDAO {
 	//주문하기
 	
 	public int orderProduct(ToyVO vo) {
-		int res = sqlSession.insert("t.toy_orderproduct", vo)
+		int res = sqlSession.insert("t.toy_orderproduct", vo);
 				return res;
 	}
 	
 	//주문 목록 보기
-	public orderList<OrderVO> selectOrderList() {
-		List<OrderVO> orderlist = sqlSession.selectList("t.toy_orderlist");
+	public List<ToyVO> selectOrderList() {
+		List<ToyVO> orderlist = sqlSession.selectList("t.toy_orderlist");
 		return orderlist;
 		
 	}
 	
 	
-}
+
 }

@@ -30,8 +30,12 @@ public class ToyController {
 		this.toy_dao = toy_dao;
 }
 	
+	//상품 진열 화면 보기
+	
+	
+	
 	//장바구니 목록 보기
-	@RequestMapping(value = { "/toy_list.do")
+	@RequestMapping( "/toy_list.do") 
 	public String cartList(Model model) {
 		
 		List<ToyVO> list = toy_dao.selectList();
@@ -39,14 +43,22 @@ public class ToyController {
 		return PATH + "toy_list.jsp";
 		
 	}
-	}
+	//주문 목록 보기
+		@RequestMapping("/toy_orderlist.do")
+		public String selectOrderList(Model model) {
+			List<ToyVO> orderlist = toy_dao.selectOrderList();
+			model.addAttribute("orderlist", orderlist);
+			return PATH + "toy_orderlist.jsp";
+			
+		}
+	
 	
 	//장바구니 상품 담기
 	@RequestMapping("/toy_addproduct.do")
-	public String addtocart(ToyVO vo) {
+	public String addCart(ToyVO vo) {
 		System.out.println("vo:" + vo);
 		
-		toy_dao.addCart(vo);
+		toy_dao.addCart(vo); //데이터 저장
 		
 		return "redirect:toy_list.do";
 		
@@ -77,13 +89,6 @@ public class ToyController {
 	
 	}
 	
-	//주문 목록 보기
-	@RequestMapping("/toy_orderlist.do")
-	public String orderList(Model model) {
-		List<ToyVO> orderlist = toy_dao.selectList();
-		model.addAttribute("orderlist", orderlist);
-		return PATH + "toy_orderlist.jsp";
-		
-	}
+	
 	
 }
